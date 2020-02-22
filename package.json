@@ -1,24 +1,25 @@
 {
-  "name": "mynewcli",
+  "name": "@lorenzorapetti/ocliff-yo",
   "description": "My new CLI",
   "version": "0.0.1",
   "author": "Lorenzo Rapetti @lorenzorapetti",
   "bin": {
-    "mynewcli": "./bin/run"
+    "ocliff-yo": "./bin/run"
   },
-  "bugs": "https://github.com/lorenzorapetti/mynewcli/issues",
+  "bugs": "https://github.com/lorenzorapetti/ocliff-yo/issues",
   "dependencies": {
     "@oclif/command": "^1.5.19",
     "@oclif/config": "^1.14.0",
     "@oclif/plugin-help": "^2.2.3",
-    "tslib": "^1.11.0"
+    "tslib": "^1.11.0",
+    "yeoman-environment": "^2.8.0",
+    "yeoman-generator": "^4.5.0"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.2",
     "@types/node": "^13.7.4",
-    "eslint": "^6.8.0",
-    "eslint-config-oclif": "^3.1.0",
-    "eslint-config-oclif-typescript": "^0.1.0",
+    "@types/yeoman-environment": "^2.3.2",
+    "@types/yeoman-generator": "^3.1.4",
     "globby": "^11.0.0",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.2"
@@ -32,7 +33,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/lorenzorapetti/mynewcli",
+  "homepage": "https://github.com/lorenzorapetti/ocliff-yo",
   "keywords": [
     "oclif"
   ],
@@ -40,15 +41,12 @@
   "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
-    "bin": "mynewcli",
+    "bin": "ocliff-yo",
     "plugins": [
       "@oclif/plugin-help"
-    ],
-    "hooks": {
-      "init": "./lib/hooks/init/myhook"
-    }
+    ]
   },
-  "repository": "lorenzorapetti/mynewcli",
+  "repository": "lorenzorapetti/ocliff-yo",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",
