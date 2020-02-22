@@ -1,0 +1,60 @@
+{
+  "name": "mynewcli",
+  "description": "My new CLI",
+  "version": "0.0.1",
+  "author": "Lorenzo Rapetti @lorenzorapetti",
+  "bin": {
+    "mynewcli": "./bin/run"
+  },
+  "bugs": "https://github.com/lorenzorapetti/mynewcli/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.19",
+    "@oclif/config": "^1.14.0",
+    "@oclif/plugin-help": "^2.2.3",
+    "tslib": "^1.11.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.2",
+    "@types/node": "^13.7.4",
+    "eslint": "^6.8.0",
+    "eslint-config-oclif": "^3.1.0",
+    "eslint-config-oclif-typescript": "^0.1.0",
+    "globby": "^11.0.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/lorenzorapetti/mynewcli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "mynewcli",
+    "plugins": [
+      "@oclif/plugin-help"
+    ],
+    "hooks": {
+      "init": "./lib/hooks/init/myhook"
+    }
+  },
+  "repository": "lorenzorapetti/mynewcli",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
